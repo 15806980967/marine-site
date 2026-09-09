@@ -1,0 +1,14 @@
+# 本地专用 / 运行时
+.workbuddy/
+inquiries.json
+server.py
+
+# 本地文档
+域名接入指南*.md
+
+# 超 GitHub 100MB 单文件限制的原始件（已拆分 Part1/Part2 替代）
+羊角Sea Dog/Sea-Dog 2023 Catalog Book.pdf
+
+# Git
+.DS_Store
+Thumbs.db

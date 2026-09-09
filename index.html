@@ -215,8 +215,8 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-s
         <h3>联系方式</h3>
         <table>
           <tr><td>公司</td><td>Brunger Export</td></tr>
-          <tr><td>邮箱</td><td><a href="mailto:Info@brungerexport.com" style="color:var(--cyan)">Info@brungerexport.com</a></td></tr>
-          <tr><td>电话</td><td>+1 954-928-1245</td></tr>
+          <tr><td>邮箱</td><td><a href="mailto:15806980967@189.cn" style="color:var(--cyan)">15806980967@189.cn</a></td></tr>
+          <tr><td>电话</td><td>15806980967</td></tr>
           <tr><td>官网</td><td><a href="https://www.brungerexport.com" target="_blank" rel="noopener" style="color:var(--cyan)">www.brungerexport.com</a></td></tr>
         </table>
       </div>
@@ -382,7 +382,7 @@ function prefill(txt){
 /* Formspree 询价接收：
    1) 注册 https://formspree.io 创建表单，获得形如 https://formspree.io/f/xxxxxx 的地址
    2) 填到下面 FORM_ENDPOINT
-   未配置时自动降级为 mailto（调起访客邮件客户端发到 Info@brungerexport.com） */
+   未配置时自动降级为 mailto（调起访客邮件客户端发到 15806980967@189.cn） */
 const FORM_ENDPOINT = ""; // TODO: 粘贴你的 Formspree 表单地址
 
 document.getElementById('inqForm').addEventListener('submit',e=>{
@@ -404,7 +404,7 @@ function mailtoFallback(n,c,p,m,msg){
   const body=encodeURIComponent(`联系人: ${n}\n联系方式: ${c}\n意向产品: ${p}\n需求: ${m}`);
   msg.textContent='⚠️ 在线表单不可用，请通过右侧邮箱或电话直接联系我们。';
   msg.style.display='block';
-  window.setTimeout(()=>{ location.href=`mailto:Info@brungerexport.com?subject=${encodeURIComponent('船用设备询价 - '+n)}&body=${body}`; },600);
+  window.setTimeout(()=>{ location.href=`mailto:15806980967@189.cn?subject=${encodeURIComponent('船用设备询价 - '+n)}&body=${body}`; },600);
 }
 </script>
 </body>

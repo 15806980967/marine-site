@@ -4,6 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Brunger Export | 船用设备供应 — Marine Equipment Catalog</title>
+<meta name="description" content="Brunger Export 代理 22 个美国一线船用设备品牌，提供岸电、仪表、照明、消防、甲板五金、复合材料等原厂目录与整柜/拼箱出口服务。| Brunger Export represents 22 leading US marine brands — shore power, instruments, lighting, fire safety, deck hardware, composites. Factory catalogs & FCL/LCL export.">
+<meta name="keywords" content="船用设备,游艇配件,Marine Equipment,Yacht Parts,Shore Power,Marine Catalog,Export,岸电,水下灯,磁罗经">
+<meta name="author" content="Brunger Export">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Brunger Export | 船用设备供应与出口">
+<meta property="og:description" content="22 个美国船用设备品牌原厂目录与出口供应 — 岸电、仪表、照明、消防、甲板五金、复合材料。">
+<meta property="og:url" content="https://xinzheng.space/">
+<meta property="og:image" content="https://xinzheng.space/images/t-h.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Brunger Export | 船用设备供应与出口">
+<meta name="twitter:description" content="22 个美国船用设备品牌原厂目录与出口供应。">
+<link rel="alternate" hreflang="zh" href="https://xinzheng.space/">
+<link rel="alternate" hreflang="en" href="https://xinzheng.space/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://xinzheng.space/">
 <style>
 :root{
   --bg:#0a1020; --bg2:#0e1730; --panel:#111d38; --panel2:#15234400;
@@ -23,9 +37,11 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,16,32,.82);backdrop-fil
 .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;letter-spacing:.5px}
 .logo .anchor{color:var(--cyan);font-size:22px}
 .logo small{color:var(--muted);font-weight:400;font-size:12px;margin-left:6px}
-.nav-links{display:flex;gap:28px;font-size:14px;color:var(--muted)}
+.nav-links{display:flex;gap:20px;font-size:14px;color:var(--muted);align-items:center}
 .nav-links a:hover{color:var(--cyan)}
-@media(max-width:720px){.nav-links{display:none}}
+.lang-toggle{margin-left:8px;padding:7px 14px;border-radius:999px;border:1px solid var(--line);color:var(--cyan);background:rgba(63,208,255,.06);font-size:13px;font-weight:600;cursor:pointer;transition:.2s}
+.lang-toggle:hover{border-color:var(--cyan);background:rgba(63,208,255,.14)}
+@media(max-width:720px){.nav-links a:not(.lang-toggle){display:none}}
 
 /* hero */
 header.hero{position:relative;padding:110px 0 90px;background:
@@ -137,9 +153,10 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-s
   <div class="container nav-inner">
     <div class="logo"><span class="anchor">⚓</span>BRUNGER EXPORT<small>Marine Equipment</small></div>
     <div class="nav-links">
-      <a href="#brands">品牌目录</a>
-      <a href="#process">采购流程</a>
-      <a href="#contact">联系我们</a>
+      <a href="#brands" data-i18n="navBrands">品牌目录</a>
+      <a href="#process" data-i18n="navProcess">采购流程</a>
+      <a href="#contact" data-i18n="navContact">联系我们</a>
+      <button class="lang-toggle" id="langToggle">EN</button>
     </div>
   </div>
 </nav>
@@ -147,29 +164,22 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-s
 <header class="hero">
   <div class="container hero-grid">
     <div>
-      <span class="kicker">🛥️ 22 个美国船用设备品牌 · 一站式出口供应</span>
-      <h1>游艇与船舶设备<br><span class="hl">专业供应与出口</span></h1>
-      <p class="sub">从岸电系统、船用仪表到水下照明、安全消防——Brunger Export 代理美国一线船用品牌，提供原厂目录、选型支持与整柜/拼箱出口服务。</p>
+      <span class="kicker" data-i18n="kicker">🛥️ 22 个美国船用设备品牌 · 一站式出口供应</span>
+      <h1 data-i18n-pair="h1"><span data-i18n="h1a">游艇与船舶设备</span><br><span class="hl" data-i18n="h1b">专业供应与出口</span></h1>
+      <p class="sub" data-i18n="sub">从岸电系统、船用仪表到水下照明、安全消防——Brunger Export 代理美国一线船用品牌，提供原厂目录、选型支持与整柜/拼箱出口服务。</p>
       <div class="hero-stats">
-        <div class="stat"><b>22</b><span>代理品牌</span></div>
-        <div class="stat"><b>47</b><span>原厂目录文档</span></div>
-        <div class="stat"><b>9</b><span>产品大类</span></div>
+        <div class="stat"><b>22</b><span data-i18n="stat1">代理品牌</span></div>
+        <div class="stat"><b>47</b><span data-i18n="stat2">原厂目录文档</span></div>
+        <div class="stat"><b>9</b><span data-i18n="stat3">产品大类</span></div>
       </div>
       <div class="hero-actions">
-        <a href="#brands" class="btn btn-primary">浏览品牌目录</a>
-        <a href="#contact" class="btn btn-ghost">询价 / 合作</a>
+        <a href="#brands" class="btn btn-primary" data-i18n="btnBrowse">浏览品牌目录</a>
+        <a href="#contact" class="btn btn-ghost" data-i18n="btnInquiry">询价 / 合作</a>
       </div>
     </div>
     <div class="hero-card">
-      <h3>优势品类</h3>
-      <ul>
-        <li>电气系统 — 岸电插座、继电器/保险丝、船用线缆</li>
-        <li>安全消防 — 自动灭火系统、CO/燃气探测</li>
-        <li>照明与夜视 — 水下灯、遥控探照灯、超低光夜视仪</li>
-        <li>甲板五金 — 不锈钢配件、系缆羊角、靠泊防碰</li>
-        <li>复合材料 — 海洋级聚合物板材、可回收甲板材</li>
-        <li>内饰软装 — 船用皮革、户外地毯、EVA 甲板</li>
-      </ul>
+      <h3 data-i18n="heroCardTitle">优势品类</h3>
+      <ul id="heroList"></ul>
     </div>
   </div>
 </header>
@@ -177,28 +187,28 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-s
 <section id="brands">
   <div class="container">
     <div class="sec-head">
-      <div class="en">Brand Catalog</div>
-      <h2>品牌与产品目录</h2>
-      <p>点击品牌卡片查看全部目录文档，均可在线预览与下载</p>
+      <div class="en" data-i18n="brandsEn">Brand Catalog</div>
+      <h2 data-i18n="brandsTitle">品牌与产品目录</h2>
+      <p data-i18n="brandsP">点击品牌卡片查看全部目录文档，均可在线预览与下载</p>
     </div>
-    <div class="search-wrap"><input id="search" type="text" placeholder="🔍 搜索品牌或产品，如：岸电 / 夜视 / 油箱 / King StarBoard…"></div>
+    <div class="search-wrap"><input id="search" type="text" data-i18n="searchPh" placeholder="🔍 搜索品牌或产品，如：岸电 / 夜视 / 油箱 / King StarBoard…"></div>
     <div class="toolbar" id="cats"></div>
     <div class="grid" id="grid"></div>
-    <div class="empty" id="empty">没有匹配的品牌，换个关键词试试</div>
+    <div class="empty" id="empty" data-i18n="empty">没有匹配的品牌，换个关键词试试</div>
   </div>
 </section>
 
 <section id="process" style="background:var(--bg2)">
   <div class="container">
     <div class="sec-head">
-      <div class="en">How We Work</div>
-      <h2>采购流程</h2>
+      <div class="en" data-i18n="procEn">How We Work</div>
+      <h2 data-i18n="procTitle">采购流程</h2>
     </div>
     <div class="steps">
-      <div class="step"><div class="num">STEP 01</div><h4>选型咨询</h4><p>提供原厂目录与规格书，根据船型与用途推荐合适型号。</p></div>
-      <div class="step"><div class="num">STEP 02</div><h4>报价确认</h4><p>按数量与配置出具正式报价单，支持样品与 FOB/CIF 条款。</p></div>
-      <div class="step"><div class="num">STEP 03</div><h4>下单备货</h4><p>与美国原厂直接下单，跟踪生产与备货进度。</p></div>
-      <div class="step"><div class="num">STEP 04</div><h4>出口交付</h4><p>整柜/拼箱拼载，处理出口文件与物流，交付至目的港。</p></div>
+      <div class="step"><div class="num">STEP 01</div><h4 data-i18n="step1t">选型咨询</h4><p data-i18n="step1p">提供原厂目录与规格书，根据船型与用途推荐合适型号。</p></div>
+      <div class="step"><div class="num">STEP 02</div><h4 data-i18n="step2t">报价确认</h4><p data-i18n="step2p">按数量与配置出具正式报价单，支持样品与 FOB/CIF 条款。</p></div>
+      <div class="step"><div class="num">STEP 03</div><h4 data-i18n="step3t">下单备货</h4><p data-i18n="step3p">与美国原厂直接下单，跟踪生产与备货进度。</p></div>
+      <div class="step"><div class="num">STEP 04</div><h4 data-i18n="step4t">出口交付</h4><p data-i18n="step4p">整柜/拼箱拼载，处理出口文件与物流，交付至目的港。</p></div>
     </div>
   </div>
 </section>
@@ -206,28 +216,28 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-s
 <section id="contact">
   <div class="container">
     <div class="sec-head">
-      <div class="en">Contact</div>
-      <h2>询价与合作</h2>
-      <p>留言后我们会尽快回复</p>
+      <div class="en" data-i18n="conEn">Contact</div>
+      <h2 data-i18n="conTitle">询价与合作</h2>
+      <p data-i18n="conP">留言后我们会尽快回复</p>
     </div>
     <div class="contact-wrap">
       <div class="contact-box">
-        <h3>联系方式</h3>
+        <h3 data-i18n="conCompany">联系方式</h3>
         <table>
-          <tr><td>公司</td><td>Brunger Export</td></tr>
-          <tr><td>邮箱</td><td><a href="mailto:15806980967@189.cn" style="color:var(--cyan)">15806980967@189.cn</a></td></tr>
-          <tr><td>电话</td><td>15806980967</td></tr>
-          <tr><td>官网</td><td><a href="https://www.brungerexport.com" target="_blank" rel="noopener" style="color:var(--cyan)">www.brungerexport.com</a></td></tr>
+          <tr><td data-i18n="conCompany">公司</td><td>Brunger Export</td></tr>
+          <tr><td data-i18n="conEmail">邮箱</td><td><a href="mailto:15806980967@189.cn" style="color:var(--cyan)">15806980967@189.cn</a></td></tr>
+          <tr><td data-i18n="conTel">电话</td><td>15806980967</td></tr>
+          <tr><td data-i18n="conWeb">官网</td><td><a href="https://www.brungerexport.com" target="_blank" rel="noopener" style="color:var(--cyan)">www.brungerexport.com</a></td></tr>
         </table>
       </div>
       <div class="contact-box">
-        <h3>在线询价</h3>
+        <h3 data-i18n="conFormTitle">在线询价</h3>
         <form id="inqForm">
-          <div class="field"><label>您的称呼 *</label><input required type="text" id="fName" placeholder="如：洪先生"></div>
-          <div class="field"><label>联系方式 *</label><input required type="text" id="fContact" placeholder="邮箱 / 电话 / 微信"></div>
-          <div class="field"><label>意向品牌 / 产品</label><input type="text" id="fProduct" placeholder="如：Magma 烤炉、King StarBoard 板材"></div>
-          <div class="field"><label>需求说明</label><textarea id="fMsg" placeholder="船型、数量、用途等"></textarea></div>
-          <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center">提交询价</button>
+          <div class="field"><label data-i18n="fName">您的称呼 *</label><input required type="text" id="fName" data-i18n="fNamePh" placeholder="如：洪先生"></div>
+          <div class="field"><label data-i18n="fContact">联系方式 *</label><input required type="text" id="fContact" data-i18n="fContactPh" placeholder="邮箱 / 电话 / 微信"></div>
+          <div class="field"><label data-i18n="fProduct">意向品牌 / 产品</label><input type="text" id="fProduct" data-i18n="fProductPh" placeholder="如：Magma 烤炉、King StarBoard 板材"></div>
+          <div class="field"><label data-i18n="fMsg">需求说明</label><textarea id="fMsg" data-i18n="fMsgPh" placeholder="船型、数量、用途等"></textarea></div>
+          <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center" data-i18n="submitBtn">提交询价</button>
           <div id="formMsg">✅ 询价已提交成功！我们会尽快与您联系。</div>
         </form>
       </div>
@@ -236,7 +246,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-s
 </section>
 
 <footer>
-  <div class="container">© 2026 Brunger Export · 船用设备出口供应 · 美国原厂直采</footer>
+  <div class="container" data-i18n="footer">© 2026 Brunger Export · 船用设备出口供应 · 美国原厂直采</div>
 </footer>
 
 <!-- modal -->
@@ -251,84 +261,195 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-s
 </div>
 
 <script>
+/* ===== i18n ===== */
+const I18N = {
+  zh:{
+    navBrands:"品牌目录", navProcess:"采购流程", navContact:"联系我们",
+    kicker:"🛥️ 22 个美国船用设备品牌 · 一站式出口供应",
+    h1a:"游艇与船舶设备", h1b:"专业供应与出口",
+    sub:"从岸电系统、船用仪表到水下照明、安全消防——Brunger Export 代理美国一线船用品牌，提供原厂目录、选型支持与整柜/拼箱出口服务。",
+    stat1:"代理品牌", stat2:"原厂目录文档", stat3:"产品大类",
+    btnBrowse:"浏览品牌目录", btnInquiry:"询价 / 合作",
+    heroCardTitle:"优势品类",
+    heroLi:["电气系统 — 岸电插座、继电器/保险丝、船用线缆","安全消防 — 自动灭火系统、CO/燃气探测","照明与夜视 — 水下灯、遥控探照灯、超低光夜视仪","甲板五金 — 不锈钢配件、系缆羊角、靠泊防碰","复合材料 — 海洋级聚合物板材、可回收甲板材","内饰软装 — 船用皮革、户外地毯、EVA 甲板"],
+    brandsEn:"Brand Catalog", brandsTitle:"品牌与产品目录", brandsP:"点击品牌卡片查看全部目录文档，均可在线预览与下载",
+    searchPh:"🔍 搜索品牌或产品，如：岸电 / 夜视 / 油箱 / King StarBoard…",
+    empty:"没有匹配的品牌，换个关键词试试",
+    procEn:"How We Work", procTitle:"采购流程",
+    step1t:"选型咨询", step1p:"提供原厂目录与规格书，根据船型与用途推荐合适型号。",
+    step2t:"报价确认", step2p:"按数量与配置出具正式报价单，支持样品与 FOB/CIF 条款。",
+    step3t:"下单备货", step3p:"与美国原厂直接下单，跟踪生产与备货进度。",
+    step4t:"出口交付", step4p:"整柜/拼箱拼载，处理出口文件与物流，交付至目的港。",
+    conEn:"Contact", conTitle:"询价与合作", conP:"留言后我们会尽快回复",
+    conCompany:"公司", conEmail:"邮箱", conTel:"电话", conWeb:"官网",
+    conFormTitle:"在线询价",
+    fName:"您的称呼 *", fContact:"联系方式 *", fProduct:"意向品牌 / 产品", fMsg:"需求说明",
+    fNamePh:"如：洪先生", fContactPh:"邮箱 / 电话 / 微信", fProductPh:"如：Magma 烤炉、King StarBoard 板材", fMsgPh:"船型、数量、用途等",
+    submitBtn:"提交询价", formOk:"✅ 询价已提交成功！我们会尽快与您联系。",
+    langLabel:"EN", title:"Brunger Export | 船用设备供应 — Marine Equipment Catalog",
+    footer:"© 2026 Brunger Export · 船用设备出口供应 · 美国原厂直采"
+  },
+  en:{
+    navBrands:"Brands", navProcess:"Process", navContact:"Contact",
+    kicker:"🛥️ 22 American marine brands · One-stop export supply",
+    h1a:"Yachts & Marine Equipment", h1b:"Professional Supply & Export",
+    sub:"From shore power and marine instruments to underwater lighting and fire safety — Brunger Export represents leading US marine brands, offering factory catalogs, spec support and FCL/LCL export service.",
+    stat1:"Brands", stat2:"Catalog Docs", stat3:"Categories",
+    btnBrowse:"Browse Catalogs", btnInquiry:"Inquiry & Partner",
+    heroCardTitle:"Key Categories",
+    heroLi:["Electrical — shore-power inlets, relays/fuses, marine cable","Safety & Fire — auto-suppression, CO/gas detection","Lighting & Night Vision — underwater lights, remote searchlights, low-light night vision","Deck Hardware — stainless fittings, cleats, dock fenders","Composites — marine-grade polymer sheet, recyclable decking","Upholstery — marine leather, outdoor carpet, EVA decking"],
+    brandsEn:"Brand Catalog", brandsTitle:"Brands & Product Catalogs", brandsP:"Click any brand card to view all catalog documents — preview and download online",
+    searchPh:"🔍 Search brands or products, e.g. shore power / night vision / fuel tank / King StarBoard…",
+    empty:"No matching brands — try another keyword",
+    procEn:"How We Work", procTitle:"Procurement Process",
+    step1t:"Selection", step1p:"Provide factory catalogs and spec sheets; recommend the right models by hull and use.",
+    step2t:"Quotation", step2p:"Formal quote by quantity and configuration; samples and FOB/CIF terms supported.",
+    step3t:"Order & Stock", step3p:"Order direct from US factories; track production and stock status.",
+    step4t:"Export & Delivery", step4p:"FCL/LCL consolidation, handle export docs and logistics to destination port.",
+    conEn:"Contact", conTitle:"Inquiry & Partnership", conP:"We'll reply as soon as we can",
+    conCompany:"Company", conEmail:"Email", conTel:"Phone", conWeb:"Website",
+    conFormTitle:"Online Inquiry",
+    fName:"Your Name *", fContact:"Contact *", fProduct:"Brand / Product", fMsg:"Requirement",
+    fNamePh:"e.g. Mr. Hong", fContactPh:"Email / Phone / WeChat", fProductPh:"e.g. Magma grill, King StarBoard sheet", fMsgPh:"Hull, qty, usage…",
+    submitBtn:"Submit Inquiry", formOk:"✅ Inquiry submitted! We'll contact you shortly.",
+    langLabel:"中文", title:"Brunger Export | Marine Equipment Supplier & Export",
+    footer:"© 2026 Brunger Export · Marine Equipment Export · Direct from US Factories"
+  }
+};
+
+const CATS = [
+  {cn:"全部",en:"All"},{cn:"电气系统",en:"Electrical"},{cn:"照明夜视",en:"Lighting & Night Vision"},
+  {cn:"安全消防",en:"Safety & Fire"},{cn:"甲板五金",en:"Deck Hardware"},{cn:"航行操控",en:"Navigation & Control"},
+  {cn:"复合材料",en:"Composites"},{cn:"内饰软装",en:"Upholstery & Interior"},
+  {cn:"厨房生活",en:"Galley & Lifestyle"},{cn:"维护保养",en:"Maintenance"}
+];
+const CAT_EN = {}; CATS.forEach(c=>CAT_EN[c.cn]=c.en);
+
+const params = new URLSearchParams(location.search);
+let lang = params.get('lang')==='en' ? 'en' : 'zh';
+
+function setLang(){
+  const T = I18N[lang];
+  document.documentElement.lang = lang==='en' ? 'en' : 'zh-CN';
+  document.title = T.title;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k = el.getAttribute('data-i18n');
+    if(k==='searchPh'){ el.setAttribute('placeholder', T[k]); return; }
+    if(el.tagName==='INPUT'||el.tagName==='TEXTAREA'){ el.setAttribute('placeholder', T[k]); return; }
+    el.textContent = T[k];
+  });
+  document.getElementById('heroList').innerHTML = T.heroLi.map(t=>`<li>${t}</li>`).join('');
+  document.getElementById('langToggle').textContent = T.langLabel;
+  if(typeof render==='function') render();
+}
+
+document.getElementById('langToggle').addEventListener('click',()=>{
+  lang = lang==='zh' ? 'en' : 'zh';
+  const url = new URL(location.href); url.searchParams.set('lang', lang);
+  history.replaceState(null,'',url);
+  setLang();
+});
+
 const DATA = [
  {name:"T-H Marine",img:"images/t-h.jpg",cn:"不锈钢甲板五金",cat:"甲板五金",icon:"🔧",
   desc:"美国船用配件大厂，涵盖舱底泵（HYDRA 系列，316 不锈钢轴、防气锁设计）、舱盖支撑、锁具、安装五金等全品类船用配件。",
+  en:"Major US marine hardware maker: bilge pumps (HYDRA series with 316 stainless shaft, anti-airlock design), hatch supports, latches and mounting hardware across the full range.",
   docs:[["T-H Marine Catalog 2026","不锈钢T-H Marine/T-H Marine Catalog 2026.pdf",101],["HYDRA 潜水泵产品页","不锈钢T-H Marine/T-H Marine HYDRA Pumps SellSheets.pdf",6]]},
  {name:"Hubbell Marine",img:"images/hubbell.jpg",cn:"岸电与船用电气",cat:"电气系统",icon:"🔌",
   desc:"Hubbell 船用岸电专家：岸电插座、接头、卷线器与船用接线端子，广泛用于商业与休闲船舶（曾服务于 NatGeo《Wicked Tuna》渔船队）。",
+  en:"Hubbell marine shore-power specialist: shore-power inlets, connectors, reels and marine terminals, used widely on commercial and recreational vessels (incl. NatGeo's Wicked Tuna fleet).",
   docs:[["Hubbell Marine Catalog","岸电Hubbell Marine/Hubbell Marine - Catalog.pdf",60]]},
  {name:"Littelfuse",img:"images/littelfuse.jpg",cn:"继电器 / 保险丝 / 电路保护",cat:"电气系统",icon:"⚡",
   desc:"近百年电路保护龙头：车船用直流继电器、大电流开关、MINI/ATO 保险丝与电源分配模块，覆盖客车与商用车船全场景。",
+  en:"Circuit-protection leader for nearly a century: DC relays, high-current switches, MINI/ATO fuses and power-distribution modules for automotive, RV and marine.",
   docs:[["Transportation Product Catalog","接触器Littelfuse/Littelfuse-Catalog.pdf",152],["DC 继电器手册","接触器Littelfuse/Littelfuse - DC Relays Brochure.pdf",13]]},
  {name:"Pacer",img:"images/pacer.jpg",cn:"船用线缆",cat:"电气系统",icon:"🧵",
   desc:"船用电线电缆与线束专家，产品线覆盖船用多芯电缆、端子与布线配件，当日发货、支持商业账户账期。",
+  en:"Marine wire, cable and harness specialist; stock multi-conductor marine cable, terminals and wiring accessories with same-day shipping and commercial accounts.",
   docs:[["Pacer Catalog 2024","电缆Pacer/Pacer Catalog 2024.pdf",96]]},
  {name:"Faria Beede",img:"images/faria.jpg",cn:"船用仪表",cat:"电气系统",icon:"📟",
   desc:"Faria Beede Instruments——美国船用仪表经典品牌，为众多船厂提供转速表、油压/水温表等成套仪表解决方案。",
+  en:"Classic American marine instrument brand, supplying tachometers, oil-pressure/water-temp gauges and complete gauge kits to many boatbuilders.",
   docs:[["Faria Beede Catalog 2026","仪表Faria Beede/Faria Beede Catalog 2026.pdf",24]]},
  {name:"Lectrotab",img:"images/lectrotab.jpg",cn:"压浪板 / SmartTabs",cat:"航行操控",icon:"🪝",
   desc:"Lectrotab 压浪板系统领导者：全复合材料免维护执行器、7 年质保；铝合金船专用压浪板与 SmartTabs 全系列，另有 Sentry 船用智能充电机。",
+  en:"Trim-tab leader: all-composite maintenance-free actuators, 7-year warranty; aluminum-hull tabs and full SmartTabs range, plus Sentry marine smart chargers.",
   docs:[["Lectrotab Catalog","压浪板Lectrotab - SmartTabs/Lectrotab - Catalog.pdf",45],["SmartTabs 系列","压浪板Lectrotab - SmartTabs/Lectrotab - SMART TABS BY LECTROTAB catalog.pdf",16],["Sentry 充电机","压浪板Lectrotab - SmartTabs/Lectrotab - Sentry Battery Chargers Spec Sheets.pdf",6],["国际质保政策","压浪板Lectrotab - SmartTabs/Warranty-Lectrotab.pdf",1]]},
  {name:"Fireboy-Xintex",img:"images/fireboy.jpg",cn:"消防与气体探测",cat:"安全消防",icon:"🧯",
   desc:"船用自动灭火系统与探测报警专家：发动机舱自动灭火、CO 探测、燃气（LPG/汽油蒸气）探测，覆盖商业与休闲船舶、军用与工业场景。",
+  en:"Marine automatic fire-suppression and detection expert: engine-room suppression, CO detection, LPG/gasoline-vapor detection for commercial, recreational, military and industrial use.",
   docs:[["Fireboy Xintex Catalog","消防Fireboy/Fireboy Xintex - Catalog.pdf",50]]},
  {name:"Metro Marine",img:"images/metro.jpg",cn:"水下灯",cat:"照明夜视",icon:"💡",
   desc:"水下照明光学与 LED 控制技术先驱：全光谱智能水下灯、贯穿式安装灯，用于船体、码头、桩柱与护岸，多项美国专利技术。",
+  en:"Pioneer in underwater-lighting optics and LED control: full-spectrum smart underwater lights and thru-hull fixtures for hulls, docks, pilings, with multiple US patents.",
   docs:[["Metro Marine Catalog 2025","水下灯Metro Marine/Metro Marine Catalog 2025.pdf",19],["贯穿式水下灯产品页","水下灯Metro Marine/THRU HULL Sell Sheet_Brunger.pdf",3]]},
  {name:"Golight",img:"images/golight.jpg",cn:"遥控探照灯",cat:"照明夜视",icon:"🔦",
   desc:"Golight 遥控搜索灯——大功率光源+精密反光杯光学设计，支持聚光/泛光/红外镜头切换，用于夜航搜索与作业照明。",
+  en:"Golight remote-controlled searchlights — high-power lamps with precision reflector optics, switchable spot/flood/IR lenses for night navigation and work lighting.",
   docs:[["Golight Catalog","探照灯Golight/Golight - Catalog.pdf",20],["Hybrid vs Spot 光型对比","探照灯Golight/Light Comparison - Hybrid vs Spot letter multiple.pdf",4]]},
  {name:"SIONYX",img:"images/sionyx.jpg",cn:"超低光夜视仪",cat:"照明夜视",icon:"🌙",
   desc:"黑硅 CMOS 超低光成像开创者：Nightwave 数字夜视相机在无月星光下依旧清晰，分辨率远超传统热像仪，可接入 MFD 船桥网络。",
+  en:"Black-silicon CMOS ultra-low-light imaging pioneer: Nightwave digital night-vision camera stays clear under moonless starlight, out-resolving thermal, integrates with MFD networks.",
   docs:[["SIONYX Catalog","夜视仪Sionyx/SIONYX Catalog.pdf",9],["Nightwave Digital 产品页","夜视仪Sionyx/SIONYX Nightwave Digital Sell Sheet.pdf",2]]},
  {name:"Ritchie Navigation",img:"images/ritchie.jpg",cn:"磁罗经",cat:"航行操控",icon:"🧭",
   desc:"自 1850 年以来只做一件事——罗经。美国制造精密磁罗经，行业标准品质，为远洋与近海航行提供可靠指向。",
+  en:"Since 1850, they've done one thing — compasses. Precision American-made magnetic compasses, industry-standard quality for offshore and coastal navigation.",
   docs:[["Ritchie Catalog","罗经Ritchie Compass/Ritchie Catalog.pdf",38]]},
  {name:"Moeller Marine",img:"images/moeller.jpg",cn:"船用油箱",cat:"甲板五金",icon:"⛽",
   desc:"逾 25 年船用燃油箱与燃油系统制造经验（ISO 9001:2015 认证），为各类船型提供标准与定制油箱方案。",
+  en:"25+ years building marine fuel tanks and systems (ISO 9001:2015), standard and custom tank solutions for every hull type.",
   docs:[["Moeller Marine Catalog","油箱Moeller/Moeller Marine -Catalog.pdf",76]]},
  {name:"Wexco",img:"images/wexco.jpg",cn:"船用雨刷",cat:"甲板五金",icon:"🌧️",
   desc:"重型船用雨刷系统与组件：一体式总成、多角度刮刷（45°–105°）、工业级电机，专为海上严苛环境设计。",
+  en:"Heavy-duty marine wiper systems and components: complete assemblies, multi-angle sweep (45°–105°), industrial-grade motors built for harsh seawater environments.",
   docs:[["Marine Heavy Duty Catalog","雨刷Wexco/Wexco - Catalog Marine Heavy Duty.pdf",8],["Marine Catalog","雨刷Wexco/Wexco - Marine Catalog.pdf",20]]},
  {name:"TACO Marine",img:"images/taco.jpg",cn:"旗杆 / 遮阳 / 甲板配件",cat:"甲板五金",icon:"🚩",
   desc:"TACO Marine——碳纤维旗杆（专利旋转锁紧）、J-Lock 遮阳系统、SuproFlex 碰垫条/护舷条及船用保养配件全系列。",
+  en:"TACO Marine — carbon-fiber flagpoles (patented twist-lock), J-Lock shade systems, SuproFlex fendering and full marine maintenance accessories.",
   docs:[["2026 Featured Products","旗杆Taco Marine/TACO 2026 Featured Products.pdf",32],["Maintenance & Accessories","旗杆Taco Marine/TACO 2026 Maintenance and Marine Accessories.pdf",24],["碳纤维旗杆规格","旗杆Taco Marine/2026 Flagpole Spec Sheet V3.pdf",1],["Sundeck 门锁","旗杆Taco Marine/2025 Sundeck Latch Spec Sheet & Flyer.pdf",2]]},
  {name:"Sea-Dog Line",img:"images/seadog.jpg",cn:"不锈钢船用五金",cat:"甲板五金",icon:"⚓",
   desc:"Sea-Dog——高性价比船用五金全线供应商，自主研发+美国制造产品持续扩展，品类覆盖系泊、门锁、管件、电气配件等。",
+  en:"Sea-Dog — high-value full-line marine hardware supplier, with in-house R&D and growing US-made range covering mooring, latches, fittings and electrical parts.",
   docs:[["Sea-Dog 2023 Catalog · Part 1","羊角Sea Dog/Sea-Dog 2023 Catalog Book (Part 1).pdf",172],["Sea-Dog 2023 Catalog · Part 2","羊角Sea Dog/Sea-Dog 2023 Catalog Book (Part 2).pdf",172],["Sea-Dog 2026 Supplement","羊角Sea Dog/Sea-Dog 2026 Supplement.pdf",24]]},
  {name:"Taylor Made",img:"images/taylormade.jpg",cn:"靠泊防护 / Mooring Whip",cat:"甲板五金",icon:"🛟",
   desc:"Taylor Made Products——业界高品质停泊防护产品：Mooring Whip 系缆杆系统、船用防碰球、挡风罩等，为船舶提供全方位码头保护。",
+  en:"Taylor Made Products — premium dock-protection line: Mooring Whip systems, marine fenders, windshields and full wharf protection for your vessel.",
   docs:[["Taylor Made Catalog","碰球Taylor Made/Taylor Made - Catalog.pdf",177],["Mooring Whip 系缆杆","碰球Taylor Made/mooring-whips (1).pdf",2]]},
  {name:"King Plastic",img:"images/kingplastic.jpg",cn:"海洋级聚合物板材",cat:"复合材料",icon:"🪵",
   desc:"King StarBoard®——海洋级 HDPE 板材鼻祖（K-Stran™ 工艺）：防滑 AS 板、Works-Like-Wood 加工方案，替代木材、永不锈蚀腐烂，广泛用于船厂建造与改装。",
+  en:"King StarBoard® — originator of marine-grade HDPE sheet (K-Stran™ process): anti-skid AS board, Works-Like-Wood machining, replacing wood, never rusts or rots.",
   docs:[["General Catalog","特氟龙King Plastic/King Plastic - General Catalog.pdf",16],["Marine Sell Sheets","特氟龙King Plastic/King Plastic - Marine Sell Sheets.pdf",19],["Industrial & Marine Sell Sheets","特氟龙King Plastic/King Plastic Industrial & Marine Sell Sheets.pdf",47],["Works-Like-Wood 指南","特氟龙King Plastic/King Plastic - Works-Like-Wood.pdf",9],["Industrial Applications","特氟龙King Plastic/King Plastic Industrial Applications.pdf",20]]},
  {name:"Supersede",img:"images/supersede.jpg",cn:"可持续船舶板材",cat:"复合材料",icon:"🌱",
   desc:"100% 防水、可回收的船用板材—— Marine Board 是船用胶合板真正的 1:1 替代品，由回收工业塑料制成，不腐烂不分层。",
+  en:"100% waterproof, recyclable marine board — Marine Board is a true 1:1 plywood substitute, made from recycled industrial plastic, no rot, no delamination.",
   docs:[["Supersede Catalog 2025","高分子材料Supersede/Supersede Catalog 2025.pdf",9],["Marine Board 产品页","高分子材料Supersede/Supersede Marine Board.pdf",5]]},
  {name:"Syntec Industries",img:"images/syntec.jpg",cn:"船用皮革 / 地毯 / EVA 甲板",cat:"内饰软装",icon:"🛋️",
   desc:"船用内饰材料专家：高性能人造皮革、Aggressor 户外船用地毯（卓越色牢度）、reFLEX EVA 甲板（性能测试全面领先同类）。",
+  en:"Marine-interior materials expert: high-performance faux leather, Aggressor outdoor marine carpet (superior lightfastness), reFLEX EVA decking (class-leading testing).",
   docs:[["Syntec Sensations 2024","皮革Syntec/2024-Syntec-Sensations-Catalog-01.pdf",22],["Aggressor 地毯 2025","皮革Syntec/Syntec Aggressor Collection 2025.pdf",1],["reFLEX EVA 甲板","皮革Syntec/Syntec reFLEX Brochure.pdf",4]]},
  {name:"Magma",img:"images/magma.jpg",cn:"船用烧烤炉 / 户外厨具",cat:"厨房生活",icon:"🔥",
   desc:"Magma 船用烧烤与户外烹饪装备：Crossover 系列模块化炉具、Anacapa 新款烤炉，304 不锈钢打造，是游艇生活的标配。",
+  en:"Magma marine grills and outdoor cooking: Crossover modular stoves, Anacapa grills, 304 stainless, the standard for yacht living.",
   docs:[["Marine & Outdoor Catalog","烤炉Magma/Magma-Marine-Outdoor-Catalog.pdf",28],["2026 Grill Line Up","烤炉Magma/2026 Grill Line Up MAGMA.pdf",1]]},
  {name:"Shurhold",img:"images/shurhold.jpg",cn:"船舶养护 / 抛光",cat:"维护保养",icon:"✨",
   desc:"Shurhold——船舶清洁养护工具与化学品：Buff Magic 一步抛光剂（渐变研磨，镜面收尾）、双桶定制计划、Shur-Lock 伸缩杆系统。",
+  en:"Shurhold — boat cleaning and care tools and chemicals: Buff Magic one-step polish (graded abrasive, mirror finish), dual-bucket plan, Shur-Lock extension handles.",
   docs:[["Shurhold 2026 Catalog","涂料Shurhold/Shurhold - 2026 Catalog.pdf",7],["Buff Magic 抛光剂","涂料Shurhold/shr_sheet_buffmagic_062025final.pdf",1]]},
  {name:"Sudbury",img:"images/sudbury.jpg",cn:"船用清洁剂",cat:"维护保养",icon:"🧴",
   desc:"Sudbury 船用与房车清洁化学品——\"Simply the Best\"，全系列清洁养护产品线。",
+  en:"Sudbury marine and RV cleaning chemicals — 'Simply the Best', a full line of wash and care products.",
   docs:[["Sudbury Catalog v20.1","洗涤剂Sudbury/Sudbury Catalog v20.1 C.pdf",9]]},
 ];
 
-const CATS = ["全部","电气系统","照明夜视","安全消防","甲板五金","航行操控","复合材料","内饰软装","厨房生活","维护保养"];
 let activeCat = "全部", kw = "";
 
 const grid = document.getElementById('grid');
 const catsEl = document.getElementById('cats');
 CATS.forEach(c=>{
   const b=document.createElement('button');
-  b.className='chip'+(c===activeCat?' active':'');b.textContent=c;
-  b.onclick=()=>{activeCat=c;document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));b.classList.add('active');render();};
+  b.className='chip'+(c.cn===activeCat?' active':'');
+  b.textContent = lang==='en'? c.en : c.cn;
+  b.onclick=()=>{activeCat=c.cn;document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));b.classList.add('active');render();};
   catsEl.appendChild(b);
 });
 document.getElementById('search').addEventListener('input',e=>{kw=e.target.value.trim().toLowerCase();render();});
@@ -336,18 +457,18 @@ document.getElementById('search').addEventListener('input',e=>{kw=e.target.value
 function render(){
   const list = DATA.filter(d=>{
     const okCat = activeCat==="全部" || d.cat===activeCat;
-    const hay = (d.name+d.cn+d.desc+d.cat).toLowerCase();
+    const hay = (d.name+d.cn+d.desc+d.cat+(d.en||'')+(CAT_EN[d.cat]||'')).toLowerCase();
     const okKw = !kw || hay.includes(kw);
     return okCat && okKw;
   });
   grid.innerHTML = list.map((d,i)=>`
     <div class="card">
-      <span class="cat">${d.cat}</span>
+      <span class="cat">${lang==='en'?CAT_EN[d.cat]:d.cat}</span>
       ${d.img?`<img class="card-img" src="${d.img}" alt="${d.name} 产品目录封面" loading="lazy">`:''}
       <div class="card-body">
       <h3><span class="b-ico">${d.icon}</span>${d.name}</h3>
-      <div class="brand-en">${d.cn}</div>
-      <p>${d.desc}</p>
+      <div class="brand-en">${lang==='en'?CAT_EN[d.cat]:d.cn}</div>
+      <p>${lang==='en'?(d.en||d.desc):d.desc}</p>
       <div class="docs">${d.docs.slice(0,2).map(x=>`<span class="doc-link">📄 ${x[0]} <span class="pg">(${x[2]}页)</span></span>`).join('')}${d.docs.length>2?`<span class="doc-link">+${d.docs.length-2} 份</span>`:''}</div>
       <div class="card-foot"><button class="inquiry-btn" data-i="${DATA.indexOf(d)}">查看目录 / 询价 →</button></div>
       </div>
@@ -355,6 +476,7 @@ function render(){
   document.getElementById('empty').style.display = list.length? 'none':'block';
 }
 render();
+setLang();
 
 /* modal */
 const modalBg=document.getElementById('modalBg');
@@ -362,12 +484,12 @@ grid.addEventListener('click',e=>{
   const btn=e.target.closest('.inquiry-btn'); if(!btn)return;
   const d=DATA[+btn.dataset.i];
   document.getElementById('mTitle').textContent=d.icon+' '+d.name;
-  document.getElementById('mEn').textContent=d.cn+' · '+d.cat;
-  document.getElementById('mDesc').textContent=d.desc;
+  document.getElementById('mEn').textContent=(lang==='en'?CAT_EN[d.cat]:d.cn)+' · '+(lang==='en'?CAT_EN[d.cat]:d.cat);
+  document.getElementById('mDesc').textContent=lang==='en'?(d.en||d.desc):d.desc;
   document.getElementById('mDocs').innerHTML=(d.img?`<img src="${d.img}" alt="${d.name} 封面" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;border:1px solid var(--line);margin-bottom:14px">`:'')+d.docs.map(x=>
     `<a class="m-doc" href="${encodeURI(x[1])}" target="_blank" rel="noopener">
       <span class="d-name">📄 ${x[0]}</span><span class="d-meta">PDF · ${x[2]} 页 · 预览/下载</span></a>`).join('')
-    +`<button class="btn btn-primary" style="justify-content:center;margin-top:8px" onclick="prefill('${d.name} ${d.cn}')">就 ${d.name} 询价</button>`;
+    +`<button class="btn btn-primary" style="justify-content:center;margin-top:8px" onclick="prefill('${d.name} ${lang==='en'?CAT_EN[d.cat]:d.cn}')">就 ${d.name} 询价</button>`;
   modalBg.classList.add('open');
 });
 document.getElementById('modalClose').onclick=()=>modalBg.classList.remove('open');
@@ -390,10 +512,11 @@ document.getElementById('inqForm').addEventListener('submit',e=>{
   const n=fName.value, c=fContact.value, p=fProduct.value||'未指定', m=fMsg.value||'无';
   const msg=document.getElementById('formMsg');
   const payload={name:n,contact:c,product:p,message:m,page:location.href,_subject:'船用设备询价 - '+n};
+  const okText = I18N[lang].formOk;
   const submitOk=(t)=>{msg.textContent=t;msg.style.display='block';e.target.reset();};
   if(FORM_ENDPOINT){
     fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)})
-      .then(r=>{ if(r.ok) submitOk('✅ 询价已提交成功！我们会尽快与您联系。'); else throw new Error('http'); })
+      .then(r=>{ if(r.ok) submitOk(okText); else throw new Error('http'); })
       .catch(()=>mailtoFallback(n,c,p,m,msg));
   } else {
     submitOk('ℹ️ 正在为您打开邮件客户端…');

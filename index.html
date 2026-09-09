@@ -72,10 +72,13 @@ section{padding:80px 0}
 
 /* brand grid */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:22px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px;position:relative;transition:.25s;display:flex;flex-direction:column}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:0;position:relative;transition:.25s;display:flex;flex-direction:column;overflow:hidden}
 .card:hover{transform:translateY(-5px);border-color:rgba(63,208,255,.5);box-shadow:0 14px 40px rgba(0,0,0,.45)}
-.card .cat{position:absolute;top:18px;right:18px;font-size:11px;color:var(--cyan);background:rgba(63,208,255,.1);border:1px solid rgba(63,208,255,.3);padding:3px 10px;border-radius:999px}
-.card h3{font-size:20px;font-weight:700}
+.card .card-img{width:100%;height:170px;object-fit:cover;display:block;background:#0c1526;border-bottom:1px solid var(--line)}
+.card .card-body{padding:20px 24px 24px;display:flex;flex-direction:column;flex:1}
+.card .cat{position:absolute;top:14px;right:14px;font-size:11px;color:var(--cyan);background:rgba(8,14,28,.78);border:1px solid rgba(63,208,255,.35);padding:3px 10px;border-radius:999px;backdrop-filter:blur(4px);z-index:2}
+.card h3{font-size:20px;font-weight:700;display:flex;align-items:center;gap:8px}
+.card h3 .b-ico{font-size:22px}
 .card .brand-en{color:var(--muted);font-size:13px;margin:2px 0 12px;letter-spacing:.5px}
 .card p{color:var(--muted);font-size:14px;flex:1}
 .card .docs{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
@@ -144,12 +147,12 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-s
 <header class="hero">
   <div class="container hero-grid">
     <div>
-      <span class="kicker">🛥️ 21 个美国船用设备品牌 · 一站式出口供应</span>
+      <span class="kicker">🛥️ 22 个美国船用设备品牌 · 一站式出口供应</span>
       <h1>游艇与船舶设备<br><span class="hl">专业供应与出口</span></h1>
       <p class="sub">从岸电系统、船用仪表到水下照明、安全消防——Brunger Export 代理美国一线船用品牌，提供原厂目录、选型支持与整柜/拼箱出口服务。</p>
       <div class="hero-stats">
-        <div class="stat"><b>21</b><span>代理品牌</span></div>
-        <div class="stat"><b>45+</b><span>原厂目录文档</span></div>
+        <div class="stat"><b>22</b><span>代理品牌</span></div>
+        <div class="stat"><b>47</b><span>原厂目录文档</span></div>
         <div class="stat"><b>9</b><span>产品大类</span></div>
       </div>
       <div class="hero-actions">
@@ -249,70 +252,70 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-s
 
 <script>
 const DATA = [
- {name:"T-H Marine",cn:"不锈钢甲板五金",cat:"甲板五金",icon:"🔧",
+ {name:"T-H Marine",img:"images/t-h.jpg",cn:"不锈钢甲板五金",cat:"甲板五金",icon:"🔧",
   desc:"美国船用配件大厂，涵盖舱底泵（HYDRA 系列，316 不锈钢轴、防气锁设计）、舱盖支撑、锁具、安装五金等全品类船用配件。",
   docs:[["T-H Marine Catalog 2026","不锈钢T-H Marine/T-H Marine Catalog 2026.pdf",101],["HYDRA 潜水泵产品页","不锈钢T-H Marine/T-H Marine HYDRA Pumps SellSheets.pdf",6]]},
- {name:"Hubbell Marine",cn:"岸电与船用电气",cat:"电气系统",icon:"🔌",
+ {name:"Hubbell Marine",img:"images/hubbell.jpg",cn:"岸电与船用电气",cat:"电气系统",icon:"🔌",
   desc:"Hubbell 船用岸电专家：岸电插座、接头、卷线器与船用接线端子，广泛用于商业与休闲船舶（曾服务于 NatGeo《Wicked Tuna》渔船队）。",
   docs:[["Hubbell Marine Catalog","岸电Hubbell Marine/Hubbell Marine - Catalog.pdf",60]]},
- {name:"Littelfuse",cn:"继电器 / 保险丝 / 电路保护",cat:"电气系统",icon:"⚡",
+ {name:"Littelfuse",img:"images/littelfuse.jpg",cn:"继电器 / 保险丝 / 电路保护",cat:"电气系统",icon:"⚡",
   desc:"近百年电路保护龙头：车船用直流继电器、大电流开关、MINI/ATO 保险丝与电源分配模块，覆盖客车与商用车船全场景。",
   docs:[["Transportation Product Catalog","接触器Littelfuse/Littelfuse-Catalog.pdf",152],["DC 继电器手册","接触器Littelfuse/Littelfuse - DC Relays Brochure.pdf",13]]},
- {name:"Pacer",cn:"船用线缆",cat:"电气系统",icon:"🧵",
+ {name:"Pacer",img:"images/pacer.jpg",cn:"船用线缆",cat:"电气系统",icon:"🧵",
   desc:"船用电线电缆与线束专家，产品线覆盖船用多芯电缆、端子与布线配件，当日发货、支持商业账户账期。",
   docs:[["Pacer Catalog 2024","电缆Pacer/Pacer Catalog 2024.pdf",96]]},
- {name:"Faria Beede",cn:"船用仪表",cat:"电气系统",icon:"📟",
+ {name:"Faria Beede",img:"images/faria.jpg",cn:"船用仪表",cat:"电气系统",icon:"📟",
   desc:"Faria Beede Instruments——美国船用仪表经典品牌，为众多船厂提供转速表、油压/水温表等成套仪表解决方案。",
   docs:[["Faria Beede Catalog 2026","仪表Faria Beede/Faria Beede Catalog 2026.pdf",24]]},
- {name:"Lectrotab",cn:"压浪板 / SmartTabs",cat:"航行操控",icon:"🪝",
+ {name:"Lectrotab",img:"images/lectrotab.jpg",cn:"压浪板 / SmartTabs",cat:"航行操控",icon:"🪝",
   desc:"Lectrotab 压浪板系统领导者：全复合材料免维护执行器、7 年质保；铝合金船专用压浪板与 SmartTabs 全系列，另有 Sentry 船用智能充电机。",
   docs:[["Lectrotab Catalog","压浪板Lectrotab - SmartTabs/Lectrotab - Catalog.pdf",45],["SmartTabs 系列","压浪板Lectrotab - SmartTabs/Lectrotab - SMART TABS BY LECTROTAB catalog.pdf",16],["Sentry 充电机","压浪板Lectrotab - SmartTabs/Lectrotab - Sentry Battery Chargers Spec Sheets.pdf",6],["国际质保政策","压浪板Lectrotab - SmartTabs/Warranty-Lectrotab.pdf",1]]},
- {name:"Fireboy-Xintex",cn:"消防与气体探测",cat:"安全消防",icon:"🧯",
+ {name:"Fireboy-Xintex",img:"images/fireboy.jpg",cn:"消防与气体探测",cat:"安全消防",icon:"🧯",
   desc:"船用自动灭火系统与探测报警专家：发动机舱自动灭火、CO 探测、燃气（LPG/汽油蒸气）探测，覆盖商业与休闲船舶、军用与工业场景。",
   docs:[["Fireboy Xintex Catalog","消防Fireboy/Fireboy Xintex - Catalog.pdf",50]]},
- {name:"Metro Marine",cn:"水下灯",cat:"照明夜视",icon:"💡",
+ {name:"Metro Marine",img:"images/metro.jpg",cn:"水下灯",cat:"照明夜视",icon:"💡",
   desc:"水下照明光学与 LED 控制技术先驱：全光谱智能水下灯、贯穿式安装灯，用于船体、码头、桩柱与护岸，多项美国专利技术。",
   docs:[["Metro Marine Catalog 2025","水下灯Metro Marine/Metro Marine Catalog 2025.pdf",19],["贯穿式水下灯产品页","水下灯Metro Marine/THRU HULL Sell Sheet_Brunger.pdf",3]]},
- {name:"Golight",cn:"遥控探照灯",cat:"照明夜视",icon:"🔦",
+ {name:"Golight",img:"images/golight.jpg",cn:"遥控探照灯",cat:"照明夜视",icon:"🔦",
   desc:"Golight 遥控搜索灯——大功率光源+精密反光杯光学设计，支持聚光/泛光/红外镜头切换，用于夜航搜索与作业照明。",
   docs:[["Golight Catalog","探照灯Golight/Golight - Catalog.pdf",20],["Hybrid vs Spot 光型对比","探照灯Golight/Light Comparison - Hybrid vs Spot letter multiple.pdf",4]]},
- {name:"SIONYX",cn:"超低光夜视仪",cat:"照明夜视",icon:"🌙",
+ {name:"SIONYX",img:"images/sionyx.jpg",cn:"超低光夜视仪",cat:"照明夜视",icon:"🌙",
   desc:"黑硅 CMOS 超低光成像开创者：Nightwave 数字夜视相机在无月星光下依旧清晰，分辨率远超传统热像仪，可接入 MFD 船桥网络。",
   docs:[["SIONYX Catalog","夜视仪Sionyx/SIONYX Catalog.pdf",9],["Nightwave Digital 产品页","夜视仪Sionyx/SIONYX Nightwave Digital Sell Sheet.pdf",2]]},
- {name:"Ritchie Navigation",cn:"磁罗经",cat:"航行操控",icon:"🧭",
+ {name:"Ritchie Navigation",img:"images/ritchie.jpg",cn:"磁罗经",cat:"航行操控",icon:"🧭",
   desc:"自 1850 年以来只做一件事——罗经。美国制造精密磁罗经，行业标准品质，为远洋与近海航行提供可靠指向。",
   docs:[["Ritchie Catalog","罗经Ritchie Compass/Ritchie Catalog.pdf",38]]},
- {name:"Moeller Marine",cn:"船用油箱",cat:"甲板五金",icon:"⛽",
+ {name:"Moeller Marine",img:"images/moeller.jpg",cn:"船用油箱",cat:"甲板五金",icon:"⛽",
   desc:"逾 25 年船用燃油箱与燃油系统制造经验（ISO 9001:2015 认证），为各类船型提供标准与定制油箱方案。",
   docs:[["Moeller Marine Catalog","油箱Moeller/Moeller Marine -Catalog.pdf",76]]},
- {name:"Wexco",cn:"船用雨刷",cat:"甲板五金",icon:"🌧️",
+ {name:"Wexco",img:"images/wexco.jpg",cn:"船用雨刷",cat:"甲板五金",icon:"🌧️",
   desc:"重型船用雨刷系统与组件：一体式总成、多角度刮刷（45°–105°）、工业级电机，专为海上严苛环境设计。",
   docs:[["Marine Heavy Duty Catalog","雨刷Wexco/Wexco - Catalog Marine Heavy Duty.pdf",8],["Marine Catalog","雨刷Wexco/Wexco - Marine Catalog.pdf",20]]},
- {name:"TACO Marine",cn:"旗杆 / 遮阳 / 甲板配件",cat:"甲板五金",icon:"🚩",
+ {name:"TACO Marine",img:"images/taco.jpg",cn:"旗杆 / 遮阳 / 甲板配件",cat:"甲板五金",icon:"🚩",
   desc:"TACO Marine——碳纤维旗杆（专利旋转锁紧）、J-Lock 遮阳系统、SuproFlex 碰垫条/护舷条及船用保养配件全系列。",
   docs:[["2026 Featured Products","旗杆Taco Marine/TACO 2026 Featured Products.pdf",32],["Maintenance & Accessories","旗杆Taco Marine/TACO 2026 Maintenance and Marine Accessories.pdf",24],["碳纤维旗杆规格","旗杆Taco Marine/2026 Flagpole Spec Sheet V3.pdf",1],["Sundeck 门锁","旗杆Taco Marine/2025 Sundeck Latch Spec Sheet & Flyer.pdf",2]]},
- {name:"Sea-Dog Line",cn:"不锈钢船用五金",cat:"甲板五金",icon:"⚓",
+ {name:"Sea-Dog Line",img:"images/seadog.jpg",cn:"不锈钢船用五金",cat:"甲板五金",icon:"⚓",
   desc:"Sea-Dog——高性价比船用五金全线供应商，自主研发+美国制造产品持续扩展，品类覆盖系泊、门锁、管件、电气配件等。",
   docs:[["Sea-Dog 2023 Catalog · Part 1","羊角Sea Dog/Sea-Dog 2023 Catalog Book (Part 1).pdf",172],["Sea-Dog 2023 Catalog · Part 2","羊角Sea Dog/Sea-Dog 2023 Catalog Book (Part 2).pdf",172],["Sea-Dog 2026 Supplement","羊角Sea Dog/Sea-Dog 2026 Supplement.pdf",24]]},
- {name:"Taylor Made",cn:"靠泊防护 / Mooring Whip",cat:"甲板五金",icon:"🛟",
+ {name:"Taylor Made",img:"images/taylormade.jpg",cn:"靠泊防护 / Mooring Whip",cat:"甲板五金",icon:"🛟",
   desc:"Taylor Made Products——业界高品质停泊防护产品：Mooring Whip 系缆杆系统、船用防碰球、挡风罩等，为船舶提供全方位码头保护。",
   docs:[["Taylor Made Catalog","碰球Taylor Made/Taylor Made - Catalog.pdf",177],["Mooring Whip 系缆杆","碰球Taylor Made/mooring-whips (1).pdf",2]]},
- {name:"King Plastic",cn:"海洋级聚合物板材",cat:"复合材料",icon:"🪵",
+ {name:"King Plastic",img:"images/kingplastic.jpg",cn:"海洋级聚合物板材",cat:"复合材料",icon:"🪵",
   desc:"King StarBoard®——海洋级 HDPE 板材鼻祖（K-Stran™ 工艺）：防滑 AS 板、Works-Like-Wood 加工方案，替代木材、永不锈蚀腐烂，广泛用于船厂建造与改装。",
   docs:[["General Catalog","特氟龙King Plastic/King Plastic - General Catalog.pdf",16],["Marine Sell Sheets","特氟龙King Plastic/King Plastic - Marine Sell Sheets.pdf",19],["Industrial & Marine Sell Sheets","特氟龙King Plastic/King Plastic Industrial & Marine Sell Sheets.pdf",47],["Works-Like-Wood 指南","特氟龙King Plastic/King Plastic - Works-Like-Wood.pdf",9],["Industrial Applications","特氟龙King Plastic/King Plastic Industrial Applications.pdf",20]]},
- {name:"Supersede",cn:"可持续船舶板材",cat:"复合材料",icon:"🌱",
+ {name:"Supersede",img:"images/supersede.jpg",cn:"可持续船舶板材",cat:"复合材料",icon:"🌱",
   desc:"100% 防水、可回收的船用板材—— Marine Board 是船用胶合板真正的 1:1 替代品，由回收工业塑料制成，不腐烂不分层。",
   docs:[["Supersede Catalog 2025","高分子材料Supersede/Supersede Catalog 2025.pdf",9],["Marine Board 产品页","高分子材料Supersede/Supersede Marine Board.pdf",5]]},
- {name:"Syntec Industries",cn:"船用皮革 / 地毯 / EVA 甲板",cat:"内饰软装",icon:"🛋️",
+ {name:"Syntec Industries",img:"images/syntec.jpg",cn:"船用皮革 / 地毯 / EVA 甲板",cat:"内饰软装",icon:"🛋️",
   desc:"船用内饰材料专家：高性能人造皮革、Aggressor 户外船用地毯（卓越色牢度）、reFLEX EVA 甲板（性能测试全面领先同类）。",
   docs:[["Syntec Sensations 2024","皮革Syntec/2024-Syntec-Sensations-Catalog-01.pdf",22],["Aggressor 地毯 2025","皮革Syntec/Syntec Aggressor Collection 2025.pdf",1],["reFLEX EVA 甲板","皮革Syntec/Syntec reFLEX Brochure.pdf",4]]},
- {name:"Magma",cn:"船用烧烤炉 / 户外厨具",cat:"厨房生活",icon:"🔥",
+ {name:"Magma",img:"images/magma.jpg",cn:"船用烧烤炉 / 户外厨具",cat:"厨房生活",icon:"🔥",
   desc:"Magma 船用烧烤与户外烹饪装备：Crossover 系列模块化炉具、Anacapa 新款烤炉，304 不锈钢打造，是游艇生活的标配。",
   docs:[["Marine & Outdoor Catalog","烤炉Magma/Magma-Marine-Outdoor-Catalog.pdf",28],["2026 Grill Line Up","烤炉Magma/2026 Grill Line Up MAGMA.pdf",1]]},
- {name:"Shurhold",cn:"船舶养护 / 抛光",cat:"维护保养",icon:"✨",
+ {name:"Shurhold",img:"images/shurhold.jpg",cn:"船舶养护 / 抛光",cat:"维护保养",icon:"✨",
   desc:"Shurhold——船舶清洁养护工具与化学品：Buff Magic 一步抛光剂（渐变研磨，镜面收尾）、双桶定制计划、Shur-Lock 伸缩杆系统。",
   docs:[["Shurhold 2026 Catalog","涂料Shurhold/Shurhold - 2026 Catalog.pdf",7],["Buff Magic 抛光剂","涂料Shurhold/shr_sheet_buffmagic_062025final.pdf",1]]},
- {name:"Sudbury",cn:"船用清洁剂",cat:"维护保养",icon:"🧴",
+ {name:"Sudbury",img:"images/sudbury.jpg",cn:"船用清洁剂",cat:"维护保养",icon:"🧴",
   desc:"Sudbury 船用与房车清洁化学品——\"Simply the Best\"，全系列清洁养护产品线。",
   docs:[["Sudbury Catalog v20.1","洗涤剂Sudbury/Sudbury Catalog v20.1 C.pdf",9]]},
 ];
@@ -340,12 +343,14 @@ function render(){
   grid.innerHTML = list.map((d,i)=>`
     <div class="card">
       <span class="cat">${d.cat}</span>
-      <div style="font-size:30px;margin-bottom:10px">${d.icon}</div>
-      <h3>${d.name}</h3>
+      ${d.img?`<img class="card-img" src="${d.img}" alt="${d.name} 产品目录封面" loading="lazy">`:''}
+      <div class="card-body">
+      <h3><span class="b-ico">${d.icon}</span>${d.name}</h3>
       <div class="brand-en">${d.cn}</div>
       <p>${d.desc}</p>
       <div class="docs">${d.docs.slice(0,2).map(x=>`<span class="doc-link">📄 ${x[0]} <span class="pg">(${x[2]}页)</span></span>`).join('')}${d.docs.length>2?`<span class="doc-link">+${d.docs.length-2} 份</span>`:''}</div>
       <div class="card-foot"><button class="inquiry-btn" data-i="${DATA.indexOf(d)}">查看目录 / 询价 →</button></div>
+      </div>
     </div>`).join('');
   document.getElementById('empty').style.display = list.length? 'none':'block';
 }
@@ -359,7 +364,7 @@ grid.addEventListener('click',e=>{
   document.getElementById('mTitle').textContent=d.icon+' '+d.name;
   document.getElementById('mEn').textContent=d.cn+' · '+d.cat;
   document.getElementById('mDesc').textContent=d.desc;
-  document.getElementById('mDocs').innerHTML=d.docs.map(x=>
+  document.getElementById('mDocs').innerHTML=(d.img?`<img src="${d.img}" alt="${d.name} 封面" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;border:1px solid var(--line);margin-bottom:14px">`:'')+d.docs.map(x=>
     `<a class="m-doc" href="${encodeURI(x[1])}" target="_blank" rel="noopener">
       <span class="d-name">📄 ${x[0]}</span><span class="d-meta">PDF · ${x[2]} 页 · 预览/下载</span></a>`).join('')
     +`<button class="btn btn-primary" style="justify-content:center;margin-top:8px" onclick="prefill('${d.name} ${d.cn}')">就 ${d.name} 询价</button>`;
